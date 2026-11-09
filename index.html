@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11141d">
+  <meta name="description" content="Listen to the two All Recursive Benevolentamalevolentaudio streams for Catego Destresasrtresa.">
+  <title>Wuvstreamed · Catego Destresasrtresa</title>
+  <style>
+    :root { color-scheme: dark; font: 16px/1.55 system-ui, sans-serif; color: #f4f2eb; background: #11141d; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(ellipse at 20% 0%, #282e40, transparent 44rem); }
+    main { width: min(100% - 2.25rem, 62rem); margin-inline: auto; padding-block: clamp(2rem, 8vw, 5rem); }
+    header { border-bottom: 1px solid #3e4456; padding-bottom: 1.65rem; margin-bottom: 1.5rem; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { margin: .35rem 0 .55rem; font: 400 clamp(2.5rem, 8vw, 5.65rem)/1 Georgia, serif; letter-spacing: -.055em; }
+    h2 { margin-bottom: .65rem; font-size: clamp(1.15rem, 4vw, 1.65rem); overflow-wrap: anywhere; }
+    h3 { margin: .35rem 0 .45rem; font-size: 1.4rem; }
+    p { color: #c2c6d4; }
+    .label { font: 700 .72rem/1.5 ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .kicker { color: #d4bfff; }
+    .streams { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+    article { min-width: 0; padding: 1.15rem; border: 1px solid #3e4456; border-top: 3px solid var(--accent); border-radius: .75rem; background: #1c2030; }
+    article .label, article a { color: var(--accent); }
+    .benevolent { --accent: #8ce3c8; }
+    .malevolent { --accent: #edbbf5; }
+    audio { width: 100%; display: block; margin: 1rem 0 .6rem; }
+    a { color: #d4bfff; text-underline-offset: .2em; }
+    a:focus-visible, audio:focus-visible { outline: 3px solid #f4f2eb; outline-offset: 3px; }
+    .source { margin-top: 1.6rem; font-size: .875rem; }
+    @media (max-width: 40rem) { .streams { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="label kicker">My Musicalwork · Catego Destresasrtresa</p>
+      <h1>Wuvstreamed</h1>
+      <p>Two All Recursive instrumentals. Choose a stream to listen.</p>
+    </header>
+    <section aria-labelledby="streams-title">
+      <h2 id="streams-title">All Recursive · Benevolentamalevolentaudio</h2>
+      <div class="streams">
+        <article class="benevolent" aria-labelledby="benevolent-title">
+          <p class="label">Stream 01 · 0:24</p>
+          <h3 id="benevolent-title">Benevolent</h3>
+          <p>Soft chords with a bright bell melody.</p>
+          <audio controls preload="none" aria-label="Benevolent stream" src="catego/destresasrtresa/audio/benevolent.mp3"></audio>
+          <a href="catego/destresasrtresa/audio/benevolent.mp3" download>Download Benevolent MP3</a>
+        </article>
+        <article class="malevolent" aria-labelledby="malevolent-title">
+          <p class="label">Stream 02 · 0:24</p>
+          <h3 id="malevolent-title">Malevolent</h3>
+          <p>A low drone, detuned chords, and an unsettled bell motif.</p>
+          <audio controls preload="none" aria-label="Malevolent stream" src="catego/destresasrtresa/audio/malevolent.mp3"></audio>
+          <a href="catego/destresasrtresa/audio/malevolent.mp3" download>Download Malevolent MP3</a>
+        </article>
+      </div>
+    </section>
+    <p class="source">Lore reference <a href="https://github.com/necurookami2026-jpg/temae-system-1/blob/main/system/1/lore.txt">Temaline System One</a></p>
+  </main>
+  <script>
+    const players = document.querySelectorAll("audio");
+    for (const player of players) {
+      player.addEventListener("play", () => {
+        for (const other of players) {
+          if (other !== player && !other.paused) other.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
